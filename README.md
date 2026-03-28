@@ -1,2 +1,2 @@
 ﻿# Mediflow-Notification-Service
-This repository is handle the notification operations of the Mediflow-management-system.
+This repository handles the notification operations of the Mediflow-management-system.
