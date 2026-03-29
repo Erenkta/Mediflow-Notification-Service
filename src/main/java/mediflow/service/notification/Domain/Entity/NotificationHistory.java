@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mediflow.service.notification.Domain.Enum.NotificationStatus;
+import mediflow.service.notification.Domain.Enum.NotificationType;
 
 import java.time.LocalDateTime;
 
@@ -22,9 +23,12 @@ public class NotificationHistory {
     private Long userId;
     private String eventType;
     private String message;
-    private LocalDateTime sentAt;
 
+    private LocalDateTime sentAt;
 
     @Enumerated(EnumType.STRING)
     private NotificationStatus status;
+
+    @Enumerated(EnumType.STRING)
+    private NotificationType type;
 }
