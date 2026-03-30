@@ -22,6 +22,7 @@ public class NotificationHistory {
 
     private Long userId;
     private String eventType;
+    @Column(length = 512)
     private String message;
 
     private LocalDateTime sentAt;
