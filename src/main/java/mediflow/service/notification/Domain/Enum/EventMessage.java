@@ -78,6 +78,25 @@ public enum EventMessage {
                     event.data().get("paymentDate"),
                     event.data().get("appointmentDate"),
                     event.data().get("amount"))),
+    BILLING_STATUS_UPDATED("""
+            Dear Patient,
+            
+            Your billing status has been updated. Billing Details : 
+            """,       (event)-> String.format(
+            """
+                    Billing Date : %s,
+                    Billing Status (OLD) :%s,
+                    Billing Status (NEW) :%s,
+                    Payment Date : %s
+                    Appointment Date : %s,
+                    Amount: %s
+            """,
+            event.data().get("billingDate"),
+            event.data().get("oldStatus"),
+            event.data().get("newStatus"),
+            event.data().get("paymentDate"),
+            event.data().get("appointmentDate"),
+            event.data().get("amount"))),
 
     ;
 
