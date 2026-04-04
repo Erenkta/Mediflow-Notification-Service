@@ -98,6 +98,21 @@ public enum EventMessage {
             event.data().get("appointmentDate"),
             event.data().get("amount"))),
 
+    BILLING_OVERDUE("""
+            Dear Patient,
+            
+            Your billing date has passed. Please check you payment details :
+            """,
+            (event)-> String.format(
+            """
+                    Billing Date : %s,
+                    Payment Date : %s
+                    Amount: %s
+            """,
+            event.data().get("billingDate"),
+            event.data().get("paymentDate"),
+            event.data().get("amount")))
+
     ;
 
     public String message;

@@ -8,6 +8,6 @@ public record NotificationEvent(
         Long receiverId,
         String eventType, // make it enum later
         NotificationType type,
-        Map<String,String> data
+        Map<String,Object> data
 ) {
 }
